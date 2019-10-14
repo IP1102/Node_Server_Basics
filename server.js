@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000; //Selects port from environt variables
 
 hbs.registerPartials(__dirname + '/Views/Partials');
 app.set('view engine', 'hbs');
@@ -50,6 +51,6 @@ app.get('/about', (req,res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('Listening in Port 3000');
+app.listen(port, () => {
+    console.log(`Listening in Port ${port}`);
 });
