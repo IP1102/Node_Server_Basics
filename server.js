@@ -50,6 +50,15 @@ app.get('/about', (req,res) => {
 });
 
 
+app.get('/projects', (req,res) => {
+    res.render('projects.hbs', {
+        ProName: 'Node_Server',
+        accTime: new Date().getHours().toString()
+    });
+});
+
+
+
 
 app.listen(port, () => {
     console.log(`Listening in Port ${port}`);
